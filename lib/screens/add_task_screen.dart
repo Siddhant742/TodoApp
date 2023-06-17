@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todoapp/widgets/task_data.dart';
 
-late String newTask;
+late String newTasktitle;
 class AddTask extends StatelessWidget {
-  final Function addTaskCallback;
-  AddTask( this.addTaskCallback);
+
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class AddTask extends StatelessWidget {
                   // focusColor: Colors.greenAccent,
                   ),
               onChanged: (newText){
-                newTask = newText;
+                newTasktitle = newText;
               },
             ),
             SizedBox(
@@ -43,7 +43,7 @@ class AddTask extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                addTaskCallback(newTask);
+                Provider.of<TaskData>(context, listen: false).addTask(newTasktitle);
               },
               child: Text(
                 'Add',
