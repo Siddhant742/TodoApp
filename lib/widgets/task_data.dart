@@ -6,4 +6,8 @@ class TaskData extends ChangeNotifier{
   int get taskCount{
     return tasks.length;
   }
+  updateTask(Task task){
+    task.toggleisDone();
+    notifyListeners();
+  }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Task  {
+class Task {
  late String name;
  late bool isDone = false ;
 
